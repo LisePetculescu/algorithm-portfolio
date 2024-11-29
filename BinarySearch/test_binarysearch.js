@@ -40,3 +40,5 @@ export function testBinarySearch() {
   console.log(``);
 
 }
+
+testBinarySearch();
