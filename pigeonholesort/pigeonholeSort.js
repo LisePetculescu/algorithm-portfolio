@@ -1,5 +1,13 @@
 // source: https://www.geeksforgeeks.org/pigeonhole-sort/
+/*
+Big-O time complexity:
+O(n + range) -->
+n = amount of numbers/elements
+range = difference between max and min + 1 
 
+This sorting algorithm is good when n and range are close to each other,
+but if range becomes too big compared to n it isn't efficient anymore
+*/
 export default function pigeonholeSort(array) {
   let min = 0;
   let max = 0;
