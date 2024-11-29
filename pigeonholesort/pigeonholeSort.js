@@ -8,6 +8,10 @@ range = difference between max and min + 1
 This sorting algorithm is good when n and range are close to each other,
 but if range becomes too big compared to n it isn't efficient anymore
 */
+
+let placeInPigeonholesIterations = 0;
+let pigeonholesToSortedIterations = 0;
+
 export default function pigeonholeSort(array) {
   let min = 0;
   let max = 0;
@@ -39,6 +43,7 @@ export default function pigeonholeSort(array) {
 
   // go through array and  add each different number to it's pigeonhole
   for (let i = 0; i < array.length; i++) {
+    placeInPigeonholesIterations++;
     let current = array[i];
     let pigeonholeIndex = current - min;
     pigeonholes[pigeonholeIndex].push(current);
@@ -46,19 +51,22 @@ export default function pigeonholeSort(array) {
 
   console.log("Numbers in their pigeonholes: ", pigeonholes);
 
-  // combine the pigeonholes-arrays to get the sorted array
-  let sortedArray = [].concat(...pigeonholes);
+  //  // combine the pigeonholes-arrays to get the sorted array
+  //   let sortedArray = [].concat(...pigeonholes);
+  //   console.log("Sorted Array:", sortedArray);
 
+  // Loop over each number in each pigeonholes-array and add the numbers to the sorted array
+  let sortedArray = [];
+  for (let p = 0; p < pigeonholes.length; p++) {
+    for (let n = 0; n < pigeonholes[p].length; n++) {
+      pigeonholesToSortedIterations++;
+      sortedArray.push(pigeonholes[p][n]);
+    }
+  }
   console.log("Sorted Array:", sortedArray);
 
-  // // Loop over each number in each pigeonholes-array and add the numbers to the sorted array
-  //   let sortedArray = [];
-  //   for (let p = 0; p < pigeonholes.length; p++) {
-  //     for (let n = 0; n < pigeonholes[p].length; n++) {
-  //       sortedArray.push(pigeonholes[p][n]);
-  //     }
-  //   }
-  //   console.log("Sorted Array:", sortedArray);
+  console.log("Place numbers in Pigeonholes Iterations:", placeInPigeonholesIterations);
+  console.log("Numbers from pigeonholes to sorted array Iterations:", pigeonholesToSortedIterations);
 
   return sortedArray;
 }
