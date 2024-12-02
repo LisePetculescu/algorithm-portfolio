@@ -1,4 +1,4 @@
-import pigeonholeSort from "./pigeonholeSort.js";
+import pigeonholeSort from "./ApigeonholeSort.js";
 
 export default function testPigeonholeSort() {
   const unsortedArray = [6, 2, 5, 9, 7, 3, 5, 3, 6, 7, 5];
@@ -18,3 +18,5 @@ export default function testPigeonholeSort() {
   pigeonholeSort(bigRangeUnsorted);
   console.log("");
 }
+
+console.log(testPigeonholeSort());
