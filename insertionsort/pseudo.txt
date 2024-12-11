@@ -1,0 +1,7 @@
+
+
+if (current < prev)
+    swap
+    if (current < prev)
+    swap
+
