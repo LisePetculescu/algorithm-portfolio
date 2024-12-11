@@ -41,4 +41,4 @@ export function testBinarySearch() {
 
 }
 
-testBinarySearch();
+// testBinarySearch();

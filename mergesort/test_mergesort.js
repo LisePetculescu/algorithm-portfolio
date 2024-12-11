@@ -14,7 +14,7 @@ export function testMergeSort(unsortedArray) {
   logFinalCounts();
 }
 
-console.log(testMergeSort());
+// console.log(testMergeSort());
 
 // const evenNum = [2, 4, 6, 8];
 // const unevenNum = [1, 3, 5, 7, 9];
